@@ -20,7 +20,7 @@ document.querySelector(".out-3").textContent = e + f;
 // Task 4.
 // Создайте две переменные e1 = '3' и f1 = 5. Выведите на страницу  в .out-4 результат сложения e1 + f1. Объясните разницу.
 let e1 = "3";
-let f1 = 5;
+let f11 = 5;
 document.querySelector(".out-4").textContent = e1 + f1;
 // document.querySelector('.out-4').textContent =
 
@@ -219,5 +219,16 @@ b20.onclick = function () {
     "you`re " +
     i20_4.value;
 };
+//*********************************** */
 
-// document.querySelector(".b-20").onclick = t20;
+function f1() {
+  let val_in = +document.querySelector(".i-21").value;
+  // let a = document.querySelector(".b-21");
+  let out21 = document.querySelector(".out-21");
+  if (val_in > 8) {
+    out21.innerHTML = true;
+  } else {
+    out21.innerHTML = false;
+  }
+}
+document.querySelector(".b-21").onclick = f1;
