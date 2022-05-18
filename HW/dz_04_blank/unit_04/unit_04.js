@@ -148,28 +148,49 @@ document.querySelector(".b-11").onclick = f11;
 // Task 12
 //   Создайте input(date).i-12 и button.b-12 - при нажатии на кнопку выводите на в  out-12 выбранную в input дату.
 
-function f12() {}
+function f12() {
+  let out = document.querySelector(".out-12");
+  out.innerHTML = document.querySelector(".i-12").value;
+}
 
 document.querySelector(".b-12").onclick = f12;
 
 // Task 13
 //  Создайте input(range).i-13. При изменении положения ползунка i-13 выводите значение в out-13. Для события используйте oninput.
 
-function f13() {}
+function f13() {
+  let rang = document.querySelector(".i-13").value;
+  let out = document.querySelector(".out-13");
+
+  out.innerHTML = rang;
+}
 
 document.querySelector(".i-13").oninput = f13;
 
 // Task 14
 // Создайте text-area.t-14 и button.b-14 - при нажатии на кнопку выводите на в out-14 текст введенный в t-14.
 
-function f14() {}
+function f14() {
+  let inptext = document.querySelector("textarea.t-14").value;
+  let out = document.querySelector(".out-14");
+
+  out.innerHTML = inptext;
+}
 
 document.querySelector(".b-14").onclick = f14;
 
 // Task 15
 // Создайте text-area.t-15, input.i-15 и button.b-15 - при нажатии на кнопку выводите текст из input.i-15 в textarea.t-15 и на страницу в out-15.
 
-function f15() {}
+function f15() {
+  let textinp = document.querySelector(".i-15").value;
+  let textout = document.querySelector(".t-15");
+  let textOutPage = document.querySelector(".out-15");
+
+  console.log(textinp);
+  textout.innerHTML = textinp;
+  textOutPage.innerHTML = textinp;
+}
 
 document.querySelector(".b-15").onclick = f15;
 
@@ -178,6 +199,10 @@ document.querySelector(".b-15").onclick = f15;
 
 function f16() {
   // для получения выбранного option просто получите select в переменную и select.value;
+  let sel = document.querySelector(".s-16").value;
+  let out = document.querySelector(".out-16");
+
+  out.innerHTML = sel;
 }
 
 document.querySelector(".b-16").onclick = f16;
@@ -185,21 +210,36 @@ document.querySelector(".b-16").onclick = f16;
 // Task 17
 // Создайте select.s-17. Добавьте ему событие onchange, при наступлении которого запускается функция f17. Функция должна выводить в out-17 value выбранного в select option.
 
-function f17() {}
+function f17() {
+  let sel = document.querySelector(".s-17").value;
+  let out = document.querySelector(".out-17");
 
+  out.innerHTML = sel;
+}
 document.querySelector(".s-17").onchange = f17;
 
 // Task 18
 // Создайте select.s-18 и input.i-18. Добавьте на select событие onchange, при наступлении которого запускается функция f18. Функция должна выводить в input i-18 value выбранного в select option.
 
-function f18() {}
+function f18() {
+  let sel = document.querySelector(".s-18").value;
+  let out = document.querySelector("value.input.i-18");
+  console.log(sel, out.clientHeight);
+  out = "s";
+}
 
 document.querySelector(".s-18").onchange = f18;
 
 // Task 19
 // Создайте форму. В ней input(text).i-191 и input(password).i-192 - и кнопку button.b-19. По нажатию кнопки выводите значение text и password в out-19 через пробел. Обратите внимание на хитрость. Мы, кнопку сейчас повесили за пределами формы. Чуть позже мы рассмотрим почему это делали.
 
-function f19() {}
+function f19() {
+  let textinp = document.querySelector(".i-191").value;
+  let passinp = document.querySelector(".i-192").value;
+  let out = document.querySelector(".out-19");
+
+  out.innerHTML = textinp + " " + passinp;
+}
 
 document.querySelector(".b-19").onclick = f19;
 
@@ -212,6 +252,12 @@ document.querySelector(".b-19").onclick = f19;
 function f20(e) {
   e.preventDefault(); // чтобы форма не перезагружала страницу!!!!
   let form = document.querySelector(".f-20");
+  let out = document.querySelector(".out-20");
+  let userinp = form.elements["username"].value;
+  let passinp = form.elements["password"].value;
+
+  out.innerHTML = userinp + " " + passinp;
+
   console.log(form.elements);
   console.log(form.elements["username"].value); // так можно обратиться к элементу внутри формы
 }
