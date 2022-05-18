@@ -137,10 +137,13 @@ document.querySelector(".b-10").onclick = f10;
 //   Создайте input(color).i-111 и input(color).i-112- два элемента и button.b-11 - при нажатии на кнопку присвойте цвет из первого input в value второго.
 
 function f11() {
-  let newcol = document.querySelector(".i-111").value;
-  let seccol = document.querySelector(".i-112").value;
-  console.log(newcol, seccol);
-  seccol = newcol;
+  let selectColor = document.querySelector(".i-111").value;
+  let corlorToChange = document.querySelector(".i-112");
+
+  corlorToChange.value = selectColor;
+
+  // console.log(selectColor, corlorToChange);
+  // seccol = selectColor;
 }
 
 document.querySelector(".b-11").onclick = f11;
@@ -223,9 +226,9 @@ document.querySelector(".s-17").onchange = f17;
 
 function f18() {
   let sel = document.querySelector(".s-18").value;
-  let out = document.querySelector("value.input.i-18");
+  let out = document.querySelector(".i-18");
   console.log(sel, out.clientHeight);
-  out = "s";
+  out.value = sel;
 }
 
 document.querySelector(".s-18").onchange = f18;
