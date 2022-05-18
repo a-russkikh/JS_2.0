@@ -27,30 +27,54 @@ document.querySelector(".p-3").onclick = f3;
 
 // Task 4. Создайте input(checkbox).i-4 и button.b-4 - при нажатии на кнопку выводите true если checkbox выбран и false если не выбран. Вывод везде в задачах, где не указано другое, осуществляется в div.out-номер задачи. В данном случае div.out-4
 
-function f4() {}
+document.querySelector(".b-4").onclick = () => {
+  let checkbox = document.querySelector("input.i-4").checked;
 
-document.querySelector(".b-4").onclick = f4;
+  out = document.querySelector("div.out-4");
+  out.innerHTML = checkbox;
+};
 
 // Task 5.
 //Создайте input(checkbox).i-5 и button.b-5. Для checkbox добавьте value="task-5" - при нажатии на кнопку b-5 выводите value checkbox если checkbox выбран и false если не выбран. Вывод везде в задачах, где не указано другое, осуществляется в div.out-номер задачи. В данном случае div.out-5
+let check5 = document.querySelector("input.i-5");
 
-function f5() {}
+function f5() {
+  let checkb = check5.checked;
+  console.log(checkb);
+  out = document.querySelector("div.out-5");
 
+  if (checkb == true) {
+    out.innerHTML = check5.value;
+  } else {
+    out.innerHTML = checkb;
+  }
+}
 document.querySelector(".b-5").onclick = f5;
 
 // Task 6.
 //Создайте input(hidden).i-6 и button.b-6 - при нажатии на кнопку выводите value из input в div.out-6
+let hid = document.querySelector(".i-6").value;
 
-function f6() {}
+function f6() {
+  let out = document.querySelector("div.out-6");
+  out.innerHTML = hid;
+}
 
 document.querySelector(".b-6").onclick = f6;
 
 // Task 7.
 // Создайте input(password).i-7 и button.b-7 - при нажатии на кнопку выводите в div.out-71 value прописанное в input. В .out-72 выводите 1 если длина пароля больше или равна 6 или 0 если меньше. Для подсчета количества символов в строке используйте length.
 
-function f7() {}
+document.querySelector(".b-7").onclick = () => {
+  let pas = document.querySelector(".i-7").value;
+  let out = document.querySelector(".out-72");
 
-document.querySelector(".b-7").onclick = f7;
+  if (pas.length < 6) {
+    out.innerHTML = 0;
+  } else if (pas.length >= 6) {
+    out.innerHTML = 1;
+  }
+};
 
 // Task 8.
 // Создайте div.out-8 и кнопку .b-8. При нажатии кнопки создавайте внутри div.out-8 элемент input.i-81 и кнопку .b-81 (innerHTML). Добавьте на созданную кнопку событие клик и запуск функции f81. Функция должна в .out-81 выводить value созданного input.i-81.
@@ -61,30 +85,63 @@ function f8() {
   //  потом получаем кнопку со страницы и вешаем событие
   //    вашасозданнаякнопка.onclick = f81;
   //
-}
+  //   let create = document.querySelector(".out-8");
 
-function f81() {}
+  let out8 = document.querySelector(".out-8");
+
+  document.querySelector(".out-8").innerHTML =
+    "<button class='button-primary b-81'>Task-81</button>";
+  document.querySelector(".out-8").innerHTML +=
+    '<input type="password" class="i-81">';
+
+  function f81() {
+    // console.log(document.querySelector("input.i-81").value);
+    let i81 = document.querySelector("input.i-81").value;
+    let out81 = document.querySelector(".out-81");
+    out81.innerHTML = i81;
+  }
+
+  document.querySelector(".b-81").onclick = f81;
+}
 
 document.querySelector(".b-8").onclick = f8;
 
 // Task 9
 //Создайте один input(radio).r-9  и button.b-9 - при нажатии на button если radio.r-9 выбран (активен, checked) выводите в .out-9 - value прописанное в r-9, либо 0 если не активен.
 
-function f9() {}
+function f9() {
+  let rad = document.querySelector("input.r-9");
+  let out = document.querySelector(".out-9");
+  if (rad.checked == true) {
+    out.innerHTML = rad.value;
+  } else {
+    out.innerHTML = 0;
+  }
+}
 
 document.querySelector(".b-9").onclick = f9;
 
 // Task 10
 // >Создайте input(color).i-10 и button.b-10 - при нажатии на кнопку окрашивайте div.out-10 выбранным цветом (имеется ввиду .style.background = ).
 
-function f10() {}
+function f10() {
+  let newcol = document.querySelector(".i-10").value;
+  let out = document.querySelector("div.out-10");
+  console.log(newcol);
+  out.style.background = newcol;
+}
 
 document.querySelector(".b-10").onclick = f10;
 
 // Task     11
 //   Создайте input(color).i-111 и input(color).i-112- два элемента и button.b-11 - при нажатии на кнопку присвойте цвет из первого input в value второго.
 
-function f11() {}
+function f11() {
+  let newcol = document.querySelector(".i-111").value;
+  let seccol = document.querySelector(".i-112").value;
+  console.log(newcol, seccol);
+  seccol = newcol;
+}
 
 document.querySelector(".b-11").onclick = f11;
 
