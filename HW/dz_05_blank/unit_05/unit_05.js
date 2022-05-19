@@ -23,7 +23,7 @@ function t2() {
   let out = document.querySelector(".out-2");
   let collect = "";
 
-  for (let i = 2; i <= 122; i + 2) {
+  for (let i = 2; i <= 122; i += 2) {
     collect += i + " ";
   }
   out.innerHTML = collect;
@@ -36,7 +36,16 @@ document.querySelector(".b-2").onclick = t2;
 //     25 24 23 22 . . 7
 // от 25 до 7 c шагом 1. Разделитель - пробел. Задача решается с помощью цикла.
 
-function t3() {}
+function t3() {
+  let out = document.querySelector(".out-3");
+  let collect = "";
+
+  for (let i = 25; i >= 7; i--) {
+    collect += i + " ";
+  }
+
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-3").onclick = t3;
 
@@ -45,7 +54,15 @@ document.querySelector(".b-3").onclick = t3;
 //     77_74_71_68_65_62_ ... _38_35_
 // от 77 до 35 c шагом 3. Разделитель - знак подчеркивания. Задача решается с помощью цикла.
 
-function t4() {}
+function t4() {
+  let collect = "";
+  let out = document.querySelector(".out-4");
+
+  for (let i = 77; i >= 35; i -= 3) {
+    collect += i + "_";
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-4").onclick = t4;
 
@@ -54,7 +71,21 @@ document.querySelector(".b-4").onclick = t4;
 //     1_*2_**3_*4_** ... 17_*
 // от 1 до 17 c шагом 1. Разделитель - знак подчеркивания и звездочка (если число нечетное, и две звездочки если четное). Задача решается с помощью цикла.
 
-function t5() {}
+function t5() {
+  let out = document.querySelector(".out-5");
+  let collect = "";
+  let star = 0;
+
+  for (let i = 1; i <= 17; i++) {
+    if (i % 2 == 0) {
+      star = "**";
+    } else {
+      star = "*";
+    }
+    collect += i + "_" + star;
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-5").onclick = t5;
 
@@ -68,7 +99,15 @@ document.querySelector(".b-5").onclick = t5;
 //Задача решается с помощью цикла. В каждой итерации цикл выводит 6 звездочек без пробелов. Перенос строки - br. Количество строк (итераций, повторений) цикла вводит пользователь в i-6.
 //
 
-function t6() {}
+function t6() {
+  let count = document.querySelector(".i-6").value;
+  console.log(count);
+  let out = document.querySelector(".out-6");
+
+  for (let i = count; i > 0; i--) {
+    out.innerHTML += "******&lt;br&gt;<br>";
+  }
+}
 
 document.querySelector(".b-6").onclick = t6;
 
