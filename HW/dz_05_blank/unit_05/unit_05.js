@@ -3,7 +3,14 @@
 //     1 2 3 4 5 6 7 8 9 ... 49 50
 // от 1 до 50 включительно. Разделитель - пробел. Задача решается с помощью цикла.
 
-function t1() {}
+function t1() {
+  let out = document.querySelector(".out-1");
+  let count = "";
+  for (let i = 0; i <= 50; i++) {
+    count += i + " ";
+  }
+  out.innerHTML = count;
+}
 
 document.querySelector(".b-1").onclick = t1;
 
@@ -12,7 +19,15 @@ document.querySelector(".b-1").onclick = t1;
 //     2 4 6 ... 122
 // от 2 до 122 c шагом 2. Разделитель - пробел. Задача решается с помощью цикла.
 
-function t2() {}
+function t2() {
+  let out = document.querySelector(".out-2");
+  let collect = "";
+
+  for (let i = 2; i <= 122; i + 2) {
+    collect += i + " ";
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-2").onclick = t2;
 
