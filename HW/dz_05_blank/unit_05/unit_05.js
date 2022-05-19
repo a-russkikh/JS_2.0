@@ -101,7 +101,6 @@ document.querySelector(".b-5").onclick = t5;
 
 function t6() {
   let count = document.querySelector(".i-6").value;
-  console.log(count);
   let out = document.querySelector(".out-6");
 
   for (let i = count; i > 0; i--) {
@@ -118,7 +117,16 @@ document.querySelector(".b-6").onclick = t6;
 //     4 3 2 1 0
 // Задача решается с помощью цикла.
 
-function t7() {}
+function t7() {
+  let out = document.querySelector(".out-7");
+  let count = document.querySelector(".i-7").value;
+  let collect = "";
+
+  for (let i = count; i >= 0; i--) {
+    collect += i + " ";
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-7").onclick = t7;
 
@@ -130,7 +138,17 @@ document.querySelector(".b-7").onclick = t7;
 //     4 5 6 7 8
 // Задача решается с помощью цикла.
 
-function t8() {}
+function t8() {
+  let out = document.querySelector(".out-8");
+  let num1 = document.querySelector(".i-81").value;
+  let num2 = document.querySelector(".i-82").value;
+  let collect = "";
+
+  for (let i = num1; i <= num2; i++) {
+    collect += i + " ";
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-8").onclick = t8;
 
@@ -144,7 +162,23 @@ document.querySelector(".b-8").onclick = t8;
 // Задача решается с помощью цикла. Подсказка - вначале делаем проверку, а потом запускаем цикл.
 // цикл - один
 
-function t9() {}
+function t9() {
+  let out = document.querySelector(".out-9");
+  let num1 = +document.querySelector(".i-91").value;
+  let num2 = +document.querySelector(".i-92").value;
+  let temp = 0;
+  let collect = "";
+
+  if (num1 > num2) {
+    temp = num1;
+    num1 = num2;
+    num2 = temp;
+  }
+  for (let i = num1; i <= num2; i++) {
+    collect += i + " ";
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-9").onclick = t9;
 
@@ -152,7 +186,16 @@ document.querySelector(".b-9").onclick = t9;
 // Кнопка b-10 запускает функцию t10. Функция должна выводить в out-10 четные годы от 1950 до 2000 включительно.
 // Разделитель - пробел. Задача решается через цикл, а четность - через шаг (равный 2).
 
-function t10() {}
+function t10() {
+  let out = document.querySelector(".out-10");
+  let collect = "";
+
+  for (let i = 1950; i <= 2000; i += 2) {
+    collect += i + " ";
+  }
+
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-10").onclick = t10;
 
@@ -164,7 +207,18 @@ document.querySelector(".b-10").onclick = t10;
 //     В результате должно получиться так:
 //     one 3 4 two
 
-function t11() {}
+function t11() {
+  let out = document.querySelector(".out-11");
+  dv = document.querySelectorAll("div.div-11");
+  console.log(dv);
+  let collect = "";
+
+  for (let i = 0; i < dv.length; i++) {
+    collect += dv[i] + " ";
+    console.log(collect);
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-11").onclick = t11;
 
