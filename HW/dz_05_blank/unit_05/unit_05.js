@@ -209,12 +209,13 @@ document.querySelector(".b-10").onclick = t10;
 
 function t11() {
   let out = document.querySelector(".out-11");
-  dv = document.querySelectorAll("div.div-11");
-  console.log(dv);
+  let dv = document.querySelectorAll("div.div-11");
   let collect = "";
 
   for (let i = 0; i < dv.length; i++) {
-    collect += dv[i] + " ";
+    collect += dv[i].innerHTML + " ";
+
+    out.innerText = dv[i];
     console.log(collect);
   }
   out.innerHTML = collect;
@@ -228,7 +229,14 @@ document.querySelector(".b-11").onclick = t11;
 // перебрать их с помощью цикла. Обращение к div выглядит так elem[i]
 // применить к каждому elem[i].style.background = ‘orange’
 
-function t12() {}
+function t12() {
+  let out = document.querySelector(".out-12");
+  let dv = document.querySelectorAll("div.div-12");
+
+  for (let i = 0; i < dv.length; i++) {
+    dv[i].style.background = "orange";
+  }
+}
 
 document.querySelector(".b-12").onclick = t12;
 
