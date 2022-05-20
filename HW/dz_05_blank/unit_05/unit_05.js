@@ -246,7 +246,17 @@ document.querySelector(".b-12").onclick = t12;
 // перебрать их с помощью цикла. Обращение к элементу выглядит так elem[i]
 // применить к каждому elem[i].value, причем к value первого должно равняться 1, второго - 2, третьего - 3...
 
-function t13() {}
+function t13() {
+  let out = document.querySelector(".out-13");
+  let inp1 = document.querySelectorAll("input.i-13");
+  let collect = "";
+  console.log(inp1);
+  for (i = 0; i < inp1.length; i++) {
+    collect += inp1[i].value + " ";
+    console.log(inp1[i].value);
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-13").onclick = t13;
 
@@ -256,7 +266,20 @@ document.querySelector(".b-13").onclick = t13;
 // перебрать их с помощью цикла. Обращение к элементу выглядит так elem[i]
 // вывести в out-14 value выбранного. Проверить выбран ли элемент можно с помощью elem[i].checked.
 
-function t14() {}
+function t14() {
+  let out = document.querySelector(".out-14");
+  let inpAll = document.querySelectorAll("input.i-14");
+  let collect = "";
+
+  for (i = 0; i < inpAll.length; i++) {
+    collect = inpAll[i].value;
+    // console.log(inpAll[i].value);
+    if (inpAll[i].checked) {
+      break;
+    }
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-14").onclick = t14;
 
@@ -266,6 +289,14 @@ document.querySelector(".b-14").onclick = t14;
 // Для вывода использовать цикл. Разделитель пробел.
 // Подсказка (10 - i) + ' ' + i
 
-function t15() {}
+function t15() {
+  out = document.querySelector(".out-15");
+  collect = "";
+
+  for (i = 0; i <= 10; i++) {
+    collect += 10 - i + " " + i + " ";
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-15").onclick = t15;
