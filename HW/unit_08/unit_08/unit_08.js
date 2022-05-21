@@ -105,7 +105,23 @@ document.querySelector(".b-5").onclick = t5;
 // Задача решается с помощью цикла. В каждой итерации цикл выводит 6 звездочек без пробелов и символ переноса строки br.
 // Количество строк (итераций, повторений) цикла  while вводит пользователь в i-6.
 
-function t6() {}
+function t6() {
+  let inp = document.querySelector(".i-6").value;
+  let out = document.querySelector(".out-6");
+  let k = 0;
+  let collect = "";
+
+  while (k < inp) {
+    let k1 = 6;
+    while (k1 >= 0) {
+      collect += "*";
+      k1--;
+    }
+    collect += "<br>";
+    k++;
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-6").onclick = t6;
 
@@ -116,7 +132,18 @@ document.querySelector(".b-6").onclick = t6;
 //     4 3 2 1
 // Задача решается с помощью цикла  while.
 
-function t7() {}
+function t7() {
+  let inp = document.querySelector(".i-7").value;
+  let out = document.querySelector(".out-7");
+  let k = inp;
+  let collect = "";
+
+  while (k >= 0) {
+    collect += k + " ";
+    k--;
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-7").onclick = t7;
 
