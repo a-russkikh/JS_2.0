@@ -3,7 +3,18 @@
 //     1 2 3 4 5 6 7 8 9 ... 49 50
 // от 1 до 50 включительно. Разделитель - пробел. Задача решается с помощью цикла.
 
-function t1() {}
+function t1() {
+  let collect = "";
+  let out = document.querySelector(".out-1");
+  let k = 1;
+
+  while (k <= 50) {
+    collect += k + " ";
+    k++;
+  }
+  out.innerHTML = collect;
+  console.log(collect);
+}
 
 document.querySelector(".b-1").onclick = t1;
 
@@ -12,7 +23,17 @@ document.querySelector(".b-1").onclick = t1;
 //     2 4 6 ... 122
 // от 2 до 122 c шагом 2. Разделитель - пробел. Задача решается с помощью цикла  while.
 
-function t2() {}
+function t2() {
+  let collect = "";
+  let k = 0;
+  let out = document.querySelector(".out-2");
+
+  while (k < 122) {
+    k += 2;
+    collect += k + " ";
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-2").onclick = t2;
 
@@ -21,7 +42,17 @@ document.querySelector(".b-2").onclick = t2;
 //     25 24 23 22 . . 7
 // от 25 до 7 c шагом 1. Разделитель - пробел. Задача решается с помощью цикла  while.
 
-function t3() {}
+function t3() {
+  let collect = "";
+  let k = 25;
+  let out = document.querySelector(".out-3");
+
+  while (k >= 7) {
+    collect += k + " ";
+    k -= 1;
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-3").onclick = t3;
 
@@ -30,7 +61,17 @@ document.querySelector(".b-3").onclick = t3;
 //     77_74_71_68_65_62_ ... _38_35_
 // от 77 до 35 c шагом 3. Разделитель - знак подчеркивания. Задача решается с помощью цикла  while.
 
-function t4() {}
+function t4() {
+  let collect = "";
+  let k = 77;
+  let out = document.querySelector(".out-4");
+
+  while (k >= 35) {
+    collect += `${k}_`;
+    k -= 3;
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-4").onclick = t4;
 
@@ -39,8 +80,21 @@ document.querySelector(".b-4").onclick = t4;
 //     1_*2_**3_*4_** ... 17_*
 // от 1 до 17 c шагом 1. Разделитель - знак подчеркивания и звездочка (если число нечетное, и две звездочки если четное). Задача решается с помощью цикла  while.
 
-function t5() {}
+function t5() {
+  let collect = "";
+  let k = 1;
+  let out = document.querySelector(".out-5");
 
+  while (k <= 17) {
+    star = "*";
+    if (k % 2 == 0) {
+      star = "**";
+    }
+    collect += `${k}_${star}`;
+    k += 1;
+  }
+  out.innerHTML = collect;
+}
 document.querySelector(".b-5").onclick = t5;
 
 //  Task 6
