@@ -155,7 +155,19 @@ document.querySelector(".b-7").onclick = t7;
 //     4 5 6 7 8
 // Задача решается с помощью цикла  while.
 
-function t8() {}
+function t8() {
+  let inp1 = document.querySelector(".i-81").value;
+  let inp2 = document.querySelector(".i-82").value;
+  let out = document.querySelector(".out-8");
+  let collect = "";
+  let k = inp1;
+
+  while (k <= inp2) {
+    collect += k + " ";
+    k++;
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-8").onclick = t8;
 
@@ -168,15 +180,43 @@ document.querySelector(".b-8").onclick = t8;
 // 6 7 8
 // Задача решается с помощью цикла. Подсказка - вначале делаем проверку, а потом запускаем цикл  while.
 
-function t9() {}
+function t9() {
+  let inp1 = document.querySelector(".i-91").value;
+  let inp2 = document.querySelector(".i-92").value;
+  let out = document.querySelector(".out-9");
+  let collect = "";
 
+  if (inp1 > inp2) {
+    let temp = inp1;
+    inp1 = inp2;
+    inp2 = temp;
+  }
+  let k = inp1;
+
+  while (k <= inp2) {
+    collect += k + " ";
+    k++;
+  }
+  out.innerHTML = collect;
+}
 document.querySelector(".b-9").onclick = t9;
 
 //  Task 10
 // Кнопка b-10 запускает функцию t10. Функция должна выводить в out-10 четные годы от 1950 до 2000 включительно.
 // Разделитель - пробел. Задача решается через цикл, а четность - через шаг (равный 2).
 
-function t10() {}
+function t10() {
+  let out = document.querySelector(".out-10");
+  let year2 = 2000;
+  let k = 1950;
+  let collect = "";
+
+  while (k <= year2) {
+    collect += k + " ";
+    k += 2;
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-10").onclick = t10;
 
@@ -188,7 +228,18 @@ document.querySelector(".b-10").onclick = t10;
 //     В результате должно получиться так:
 //     one 3 4 two
 
-function t11() {}
+function t11() {
+  let out = document.querySelector(".out-11");
+  let dv = document.querySelectorAll("div.div-11");
+  let k = 0;
+  let collect = "";
+
+  while (k < dv.length) {
+    collect += `${dv[k].textContent} `;
+    k++;
+  }
+  out.innerHTML = collect;
+}
 
 document.querySelector(".b-11").onclick = t11;
 
