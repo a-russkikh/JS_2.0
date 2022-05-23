@@ -1,42 +1,69 @@
 //  Task 1
 // Добавьте кнопку .b-1, которая запускает функцию f1. Функция присваивает блоку .out-1 ширину 200px, высоту 40px.
 
-function f1() {}
+function f1() {
+  out1 = document.querySelector(".out-1");
+  out1.style.height = "200px";
+  out1.style.width = "40px";
+}
 
 document.querySelector(".b-1").onclick = f1;
 
 //  Task 2
 // По нажатию кнопки b-2 запускайте функцию f2, которая присваивает блоку out-2 класс .bg-2.
 
-function f2() {}
+function f2() {
+  let addCl = document.querySelector(".out-2");
+
+  addCl.classList.add("bg-2");
+}
 
 document.querySelector(".b-2").onclick = f2;
 
 //  Task 3
 // По нажатию кнопки b-3 запускайте функцию f3, которая удаляет у блока out-3 класс .bg-3.
 
-function f3() {}
+function f3() {
+  let delCl = document.querySelector(".out-3");
+
+  delCl.classList.remove("bg-3");
+}
 
 document.querySelector(".b-3").onclick = f3;
 
 //  Task 4
 // По нажатию кнопки b-4 запускайте функцию f4, которая делает toggle класса bg-4 для блока out-4.
 
-function f4() {}
+function f4() {
+  let tog = document.querySelector(".out-4");
+
+  tog.classList.toggle("bg-4");
+}
 
 document.querySelector(".b-4").onclick = f4;
 
 //  Task 5
 // По нажатию b-5 запускайте функцию f5, которая проверяет наличие класса bg-4 у блока out-4 (да, именно bg-4 у out-4 ). Результат - true или false, выводите в out-5.
 
-function f5() {}
+function f5() {
+  let clCheck = document.querySelector(".out-4");
+  let classes = clCheck.classList;
+
+  document.querySelector(".out-5").innerHTML =
+    clCheck.classList.contains("bg-4");
+}
 
 document.querySelector(".b-5").onclick = f5;
 
 //  Task 6
 // По нажатию b-6 запускайте функцию f6, которая выводит в out-6 количество параграфов с классом p-6.
 
-function f6() {}
+function f6() {
+  let out = document.querySelector(".out-6");
+  let countP = document.querySelectorAll("p.p-6");
+
+  out.innerHTML = countP.length;
+}
 
 document.querySelector(".b-6").onclick = f6;
 
@@ -47,6 +74,11 @@ let blocks7 = document.querySelectorAll(".out-7");
 
 function f7() {
   //внутри цикла blocks7[i].classList....
+  let blocks7 = document.querySelectorAll("div.out-7");
+
+  for (i = 0; i < blocks7.length; i++) {
+    blocks7[i].classList.add("bg-7");
+  }
 }
 
 document.querySelector(".b-7").onclick = f7;
@@ -58,6 +90,9 @@ let blocks8 = document.querySelectorAll(".out-8");
 
 function f8() {
   //внутри цикла blocks8[i].classList....
+  for (let i = 0; i < blocks8.length; i++) {
+    blocks8[i].classList.toggle("bg-8");
+  }
 }
 
 document.querySelector(".b-8").onclick = f8;
@@ -67,6 +102,7 @@ document.querySelector(".b-8").onclick = f8;
 
 function f9() {
   //this.classList...  // все решается одной строкой
+  this.classList.add("bg-9");
 }
 
 let div9 = document.querySelectorAll(".out-9");
@@ -79,22 +115,42 @@ for (let i = 0; i < div9.length; i++) {
 // Усложним предыдущие задачи. С помощью цикла повесьте на блоки out-10 событие клик. По клику должна выполняться функция f10. Функция, должна делать toggle класса bg-10 тому out-10 на котором кликнули.
 
 //let div10 = тут получите все out-10
+let div10 = document.querySelectorAll(".out-10");
+console.log(div10);
 
-function f10() {}
-
+function f10() {
+  this.classList.toggle("bg-10");
+}
+for (let i = 0; i < div10.length; i++) {
+  div10[i].onclick = f10;
+  div10[i];
+}
 // а тут цикл, похожий на предыдущее задание
 
 //  Task 11
 // Добавьте кнопку .b-11, которая запускает функцию f11. Функция создает через createElement div c текстом 25 и добавляет его через append в out-11.
 
-function f11() {}
+function f11() {
+  let out = document.querySelector(".out-11");
+  let creEl = document.createElement("div");
+
+  creEl.innerHTML = 25;
+  out.appendChild(creEl);
+}
 
 document.querySelector(".b-11").onclick = f11;
 
 //  Task 12
 // Добавьте кнопку .b-12, которая запускает функцию f12. Функция создает через createElement div c текстом 12 и добавляет ему класс bg-12. Созданный div добавляется в out-12.
 
-function f12() {}
+function f12() {
+  let out = document.querySelector(".out-12");
+  newDiv = document.createElement("div");
+
+  newDiv.innerHTML = 12;
+  newDiv.classList.add("bg-12");
+  out.appendChild(newDiv);
+}
 
 document.querySelector(".b-12").onclick = f12;
 
