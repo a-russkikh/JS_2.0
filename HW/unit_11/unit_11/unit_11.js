@@ -216,6 +216,10 @@ document.querySelector(".b-13").onclick = f13;
 let d14 = [];
 
 function f14() {
+  let inp = +document.querySelector(".i-14").value;
+  for (i = 0; i < inp; i++) {
+    d14.push(1);
+  }
   showArr(".out-14", d14);
 }
 
@@ -230,7 +234,16 @@ document.querySelector(".b-14").onclick = f14;
 let d15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
 
 function f15() {
-  showArr(".out-15", d15);
+  let inp = +document.querySelector(".i-15").value;
+  let res = "";
+  if (d15.indexOf(inp) == -1) {
+    d15.push(inp);
+  } else {
+    d15 = d15.indexOf(inp);
+    console.log(d15);
+  }
+  console.log(d15);
+  document.querySelector(".out-15").innerHTML = d15;
 }
 
 document.querySelector(".b-15").onclick = f15;
@@ -246,7 +259,8 @@ let d161 = [5, 6, 7, 8, 9];
 let d162 = [23, 24, 56, 87];
 
 function f16() {
-  showArr(".out-16", d16);
+  d16 = d16.concat(d161, d162);
+  document.querySelector(".out-16").innerHTML = d16;
 }
 
 document.querySelector(".b-16").onclick = f16;
@@ -260,8 +274,12 @@ document.querySelector(".b-16").onclick = f16;
 let d17 = [];
 let d171 = ["a", "b", "c", "d"];
 let d172 = [1, 2, 3, 4, 5];
+d17 = d171;
 
 function f17() {
+  for (i = 0; i < d172.length; i++) {
+    d17.push(d172[i]);
+  }
   showArr(".out-17", d17);
 }
 
@@ -275,7 +293,11 @@ document.querySelector(".b-17").onclick = f17;
 
 let d18 = ["b", "c", "45", "e", "z", "y"];
 
-function f18() {}
+function f18() {
+  let inp = document.querySelector(".i-18").value;
+  d18 = d18.includes(inp);
+  document.querySelector(".out-18").innerHTML = d18;
+}
 
 document.querySelector(".b-18").onclick = f18;
 
@@ -299,7 +321,14 @@ let d19 = [
 ];
 let maxString = "";
 
-function f19() {}
+function f19() {
+  for (let i = 0; i < d19.length; i++) {
+    if (d19[i].length > maxString.length) {
+      maxString = d19[i];
+    }
+  }
+  showArr(".out-19", maxString);
+}
 
 document.querySelector(".b-19").onclick = f19;
 
@@ -311,6 +340,9 @@ document.querySelector(".b-19").onclick = f19;
 
 let d20 = [4, 5, 6, 7, 8, 9, 10];
 
-function f20() {}
+function f20() {
+  d20 = d20.join("");
+  document.querySelector(".out-20").innerHTML = d20;
+}
 
 document.querySelector(".b-20").onclick = f20;
