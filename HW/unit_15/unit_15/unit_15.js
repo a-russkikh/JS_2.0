@@ -3,14 +3,26 @@
 // Task 1
 // Создайте set s1. Добавьте в него три элемента 'h', 'b', 'o', 'h'. Добавление делайте через add. Выведите в консоль получившийся набор (set) s1.
 
-// let s1 = new ...
+let s1 = new Set();
+s1.add('h');
+s1.add('b');
+s1.add('o');
+s1.add('h');
+// s1.clear();
+// s1.delete('h');
+// console.log(s1);
+// console.log(s1.has('b'));
 
 // Task 2
 // При нажатии b-2 выполняете функцию f2. Функция должна добавить в набор s2 элементы, которые пользователь вводит в i-2. Функция должна выводить в консоль s2 после каждого добавления элемента.
 
-// let s2 =
+let s2 = new Set();
 
-const f2 = () => {};
+const f2 = () => {
+  let inp = document.querySelector('.i-2').value;
+  s2.add(inp);
+  console.log(s2);
+};
 
 document.querySelector('.b-2').onclick = f2;
 
@@ -19,7 +31,12 @@ document.querySelector('.b-2').onclick = f2;
 
 let s3 = new Set(['one', 'two', 'four']); // обратите внимание, как просто можно добавить массив в набор!
 
-const f3 = () => {};
+const f3 = () => {
+  let inp = document.querySelector('.i-3').value;
+
+  s3.delete(inp);
+  console.log(s3);
+};
 
 document.querySelector('.b-3').onclick = f3;
 
@@ -28,7 +45,10 @@ document.querySelector('.b-3').onclick = f3;
 
 let s4 = new Set(['a', 'b', 'c', 'z']);
 
-const f4 = () => {};
+const f4 = () => {
+  let inp = document.querySelector('.i-4').value;
+  document.querySelector('.out-4').textContent = s4.has(inp);
+};
 
 document.querySelector('.b-4').onclick = f4;
 
@@ -37,7 +57,9 @@ document.querySelector('.b-4').onclick = f4;
 
 let s5 = new Set(['a', 'b', 'c', 'z', 'a2', 'b2', 'c2', 'z2']);
 
-const f5 = () => {};
+const f5 = () => {
+  document.querySelector('.out-5').textContent = s5.size;
+};
 
 document.querySelector('.b-5').onclick = f5;
 
@@ -49,14 +71,28 @@ let a6 = [
   3, 4, 1, 1, 4, 2, 2, 4, 5, 24, 5, 3, 22, 56,
 ];
 
-const f6 = () => {};
+const f6 = () => {
+  let arrSet = new Set(a6);
+  document.querySelector('.out-6').textContent = arrSet.size;
+
+  //   console.log(a6.length);
+};
 
 document.querySelector('.b-6').onclick = f6;
 
 // Task 7
 // При нажатии b-7 выполняете функцию f7. Функция должна получать из i-7 значение пароля и проверять, чтобы пользователь в строке пароля использовал не повторяющиеся символы. Если символы уникальны, а длина пароля больше ( строго) 6 то выводите в out-7 число 1. Если есть повторяющиеся символы, или длина меньше или равна 6 - то выводите 0. Для проверки уникальности символов используйте Set.
 
-const f7 = () => {};
+const f7 = () => {
+  let inp = document.querySelector('.i-7').value;
+  let passSet = new Set(inp);
+  console.log(passSet);
+  if ((passSet.size == inp.length) & (passSet.size > 6)) {
+    document.querySelector('.out-7').textContent = 1;
+  } else {
+    document.querySelector('.out-7').textContent = 0;
+  }
+};
 
 document.querySelector('.b-7').onclick = f7;
 
@@ -69,7 +105,15 @@ let s8 = new Set([
 ]);
 let ar8 = [];
 
-const f8 = () => {};
+const f8 = () => {
+  for (let item of s8) {
+    if (item > 5) {
+      ar8.push(item);
+    }
+  }
+
+  console.log(ar8);
+};
 
 document.querySelector('.b-8').onclick = f8;
 
@@ -77,7 +121,15 @@ document.querySelector('.b-8').onclick = f8;
 //  При нажатии b-9 выполняете функцию f9. Функция должна принимать набор our_set в качестве параметра, преобразовывать его в строку, причем после каждого символа строки должен быть пробел. Функция должна возвращать результирующую строку.
 // В нашем примере результат должен быть 9 8 7 6 5
 
-const f9 = (our_set) => {};
+const f9 = (our_set) => {
+  let out = '';
+
+  for (let item of our_set) {
+    out += item + ' ';
+  }
+  //   console.log(typeof out[1]);
+  return out;
+};
 
 document.querySelector('.b-9').onclick = () => {
   let s9 = new Set([9, 8, 7, 6, 5]);
@@ -87,10 +139,19 @@ document.querySelector('.b-9').onclick = () => {
 // Task 10
 // При нажатии b-10 выполняете функцию f10. Функция должна принимать набор set в качестве параметра и выводить его в указанный элемент. Элемент указывается как второй параметр функции f10. Вывод значений - через пробел.
 
-const f10 = (out_set, elem) => {};
+const f10 = (out_set, elem) => {
+  let out = '';
+
+  for (let item of out_set) {
+    out += item + ' ';
+    console.log(out);
+  }
+  document.querySelector(elem).textContent = out;
+};
 
 document.querySelector('.b-10').onclick = () => {
   let a10 = new Set(['4', '5', '6']);
+  console.log(a10);
   f10(a10, '.out-10');
 };
 
@@ -113,7 +174,16 @@ document.querySelector('.b-11').onclick = f11;
 let str12 =
   'The name conjures up visions of plum pudding and Christmas punch quaint coaching inns and cozy firesides but also of orphaned and starving children';
 
-const f12 = () => {};
+const f12 = () => {
+  let arr = [];
+
+  for (i = 0; i < str12.length; i++) {
+    arr.push(str12[i]);
+  }
+  let arrSet = new Set(arr);
+
+  return arrSet;
+};
 
 document.querySelector('.b-12').onclick = () => {
   console.log(f12());
@@ -128,9 +198,55 @@ let str13 =
   'The name conjures up visions of plum pudding and Christmas punch quaint coaching inns and cozy firesides but also of orphaned and starving children';
 
 const f13 = () => {
-  // return
+  let arr = [];
+
+  for (let i = 0; i < str13.length; i++) {
+    arr.push(str13[i]);
+  }
+  let arrSet = new Set(arr);
+  //   console.log(arrSet);
+
+  for (let item of arrSet) {
+    console.log(arrSet);
+
+    let num = 0;
+    let out = {};
+    for (let i = 0; i < str13.length; i++) {
+      if (item.toLowerCase == str13[i].toLowerCase) {
+        num++;
+      }
+      out += `${item} : ${num}`;
+      num = 0;
+    }
+    // return out;
+  }
 };
 
 document.querySelector('.b-13').onclick = () => {
   console.log(f13());
+};
+
+let str14 =
+  'The name conjures up visions of plum pudding and Christmas punch quaint coaching inns and cozy firesides but also of orphaned and starving children';
+let out = {};
+let num = 1;
+// console.log(typeof out);
+const f14 = () => {
+  arrSet = new Set(str14);
+  for (let item of arrSet) {
+    // console.log(item);
+    for (let k = 1; k < str14.length; k++) {
+      if (item == str14[k]) {
+        num++;
+      }
+    }
+    // console.log(item, num);
+    out.item = num;
+    num = 1;
+  }
+  return out;
+};
+
+document.querySelector('.b-13').onclick = () => {
+  console.log(f14());
 };
