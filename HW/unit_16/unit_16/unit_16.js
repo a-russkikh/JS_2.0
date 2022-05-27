@@ -209,7 +209,6 @@ function f11() {
   }
   document.querySelector('.out-11').textContent = b11;
 }
-
 document.querySelector('.b-11').addEventListener('click', f11);
 
 // Task 12
