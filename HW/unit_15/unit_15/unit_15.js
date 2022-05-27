@@ -206,47 +206,23 @@ const f13 = () => {
   let arrSet = new Set(arr);
   //   console.log(arrSet);
 
-  for (let item of arrSet) {
-    console.log(arrSet);
+  let out = {};
 
-    let num = 0;
-    let out = {};
-    for (let i = 0; i < str13.length; i++) {
-      if (item.toLowerCase == str13[i].toLowerCase) {
-        num++;
-      }
-      out += `${item} : ${num}`;
-      num = 0;
-    }
-    // return out;
-  }
-};
-
-document.querySelector('.b-13').onclick = () => {
-  console.log(f13());
-};
-
-let str14 =
-  'The name conjures up visions of plum pudding and Christmas punch quaint coaching inns and cozy firesides but also of orphaned and starving children';
-let out = {};
-let num = 1;
-// console.log(typeof out);
-const f14 = () => {
-  arrSet = new Set(str14);
   for (let item of arrSet) {
     // console.log(item);
-    for (let k = 1; k < str14.length; k++) {
-      if (item == str14[k]) {
+
+    let num = 1;
+
+    for (let k = 1; k < str13.length; k++) {
+      if (item == str13[k]) {
         num++;
       }
     }
-    // console.log(item, num);
-    out.item = num;
-    num = 1;
+    out[item] = num;
   }
   return out;
 };
 
 document.querySelector('.b-13').onclick = () => {
-  console.log(f14());
+  console.log(f13());
 };
