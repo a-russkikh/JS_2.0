@@ -132,8 +132,14 @@ let a8 = [
   { id: 23, name: 'Ivan' },
   { id: 45, name: 'Petr' },
 ];
+let b8 = [];
 
-function f8() {}
+function f8() {
+  for (let item of a8) {
+    b8.push(item.id);
+  }
+  return b8;
+}
 
 document.querySelector('.b-8').addEventListener('click', () => {
   console.log(f8());
@@ -148,7 +154,20 @@ let a9 = [
   [0, 0, 0, 0, 0],
 ];
 
-function f9() {}
+function f9() {
+  let ind = 0;
+  for (i = 0; i < a9.length; i++) {
+    // console.log(i);
+    for (let key in a9[i]) {
+      //   console.log(key);
+      if (key > ind) {
+        ind = key;
+        console.log(ind);
+      }
+    }
+  }
+  return ind;
+}
 
 document.querySelector('.b-9').addEventListener('click', () => {
   document.querySelector('.out-9').innerHTML = f9();
@@ -158,8 +177,14 @@ document.querySelector('.b-9').addEventListener('click', () => {
 //При нажатии .b-10 выполняете функцию f10. Функция должна преобразовывать массив a10 в ассоциативный массив вида {4: 4, 6: 6, 9: 9, hello : "hello"} и возвращать полученный массив.
 
 let a10 = [4, 6, 9, 'Hello'];
+let b10 = {};
+function f10() {
+  for (let key in a10) {
+    b10[a10[key]] = a10[key];
+  }
 
-function f10() {}
+  return b10;
+}
 
 document.querySelector('.b-10').addEventListener('click', () => {
   console.log(f10());
@@ -174,8 +199,16 @@ let a11 = {
   three: 13,
   four: 0,
 };
+let b11 = '';
 
-function f11() {}
+function f11() {
+  for (let key in a11) {
+    if (a11[key] > 10) {
+      b11 += a11[key] + ' ';
+    }
+  }
+  document.querySelector('.out-11').textContent = b11;
+}
 
 document.querySelector('.b-11').addEventListener('click', f11);
 
@@ -183,8 +216,11 @@ document.querySelector('.b-11').addEventListener('click', f11);
 //При нажатии .b-12 выполняете функцию f12. Функция должна c помощью for of перебрать a12 и вывести в out-12 через пробел.
 
 let a12 = [4, 5, 6, 7];
-
-function f12() {}
+let b12 = '';
+function f12() {
+  for (let item of a12) {
+  }
+}
 
 document.querySelector('.b-12').addEventListener('click', f12);
 
