@@ -218,7 +218,9 @@ let a12 = [4, 5, 6, 7];
 let b12 = '';
 function f12() {
   for (let item of a12) {
+    b12 += `${item} `;
   }
+  document.querySelector('.out-12').textContent = b12;
 }
 
 document.querySelector('.b-12').addEventListener('click', f12);
@@ -228,7 +230,14 @@ document.querySelector('.b-12').addEventListener('click', f12);
 
 let a13 = 'testone';
 
-function f13() {}
+function f13() {
+  let b13 = '';
+
+  for (let item of a13) {
+    b13 += `${item} `;
+  }
+  document.querySelector('.out-13').textContent = b13;
+}
 
 document.querySelector('.b-13').addEventListener('click', f13);
 
@@ -237,13 +246,29 @@ document.querySelector('.b-13').addEventListener('click', f13);
 
 let a14 = new Set([4, 5, 6]);
 
-function f14() {}
+function f14() {
+  let b14 = '';
+
+  for (let item of a14) {
+    b14 += `${item} `;
+    // console.log(item);
+  }
+  document.querySelector('.out-14').textContent = b14;
+}
 
 document.querySelector('.b-14').addEventListener('click', f14);
 
 // Task 15
 //При нажатии .b-15 выполняете функцию f15. Функция должна получить NodeList элементов .out-15 c помощью document.querySelectorAll, затем c помощью for of перебрать полученную коллекцию элементов .out-15 записать внутрь них число 15 ( затерев содержимое).
+let a15 = document.querySelectorAll('.out-15');
 
-function f15() {}
+function f15() {
+  let b15 = '';
+
+  for (let item of a15) {
+    item.textContent = 15;
+    // console.log(item);
+  }
+}
 
 document.querySelector('.b-15').addEventListener('click', f15);
