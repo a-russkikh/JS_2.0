@@ -99,7 +99,11 @@ document.querySelector('.div-7').oncontextmenu = t7;
 /*  Дано checkbox .ch-8. Повесьте на него событие onchange при котором на документе отключается клик правой кнопкой мыши если checkbox выбран и отключает если не выбран. */
 
 function t8() {
-  console.log(ch8);
+  console.log(document.querySelector('.ch-8'));
+  if (document.querySelector('.ch-8'==checked){
+    document.querySelector('.div-7').oncontextmenu
+    return false
+  };
 }
 
 // ваше событие здесь!!!
@@ -108,10 +112,18 @@ document.querySelector('.ch-8').onchange = t8;
 // Task 9 ============================================
 /*  Дан блок .div-9. Внутри блока - изображение 1.png. При клике правой кнопкой мыши  - меняйте изображение на 2.png. Надеюсь вы догадаетесь изменить только src изображения? */
 
-function t9() {}
+function t9() {
+  let imgSrc = document.querySelector('.div-9 img');
+  // console.log(imgSrc.getAttribute('src'));
+  if (imgSrc.getAttribute('src') == 'img/1.png') {
+    imgSrc.setAttribute('src', 'img/2.png');
+  } else {
+    imgSrc.setAttribute('src', 'img/1.png');
+  }
+}
 
 // ваше событие здесь!!!
-document.querySelector('.div-7').oncontextmenu = t7;
+document.querySelector('.div-9').oncontextmenu = t9;
 
 // Task 10 ============================================
 /*  Дан блок .div-10. Внутри блока - изображение 1.png. При наведении мыши (mouseenter)  - меняйте изображение на 2.png. */
@@ -152,7 +164,7 @@ function t11() {}
 /*  Дан блок .div-14. При нажатии кнопки b-14 добавляйте к нему событие onclick - которое, при клике добавляем блоку div-14 класс active. */
 
 function t14() {}
-document.querySelector('t-14').onclick = t14;
+// document.querySelector('t-14').onclick = t14;
 
 // Task 15 ============================================
 /*  Дан блок .div-15. Добавьте на него событие move. При каждом движении мыши увеличивайте число внутри на 1. */
