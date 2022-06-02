@@ -59,7 +59,7 @@ function t5() {
     act.remove('active');
   }
 }
-
+ 
 // ваше событие здесь!!!
 document.querySelector('.div-5').ondblclick = t5;
 
